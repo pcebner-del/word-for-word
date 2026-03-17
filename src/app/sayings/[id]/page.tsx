@@ -39,7 +39,7 @@ export default async function SayingDetailPage({
 
   const related = getRelatedSayings(saying);
   const twitterText = encodeURIComponent(
-    `🇩🇪 "${saying.german}"\n\nLiterally: "${saying.wordForWord}" 😂\n\n`
+    `"${saying.german}"\n\nLiterally: "${saying.wordForWord}"\n\n`
   );
   const twitterUrl = `https://twitter.com/intent/tweet?text=${twitterText}`;
 

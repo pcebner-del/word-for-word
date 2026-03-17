@@ -10,7 +10,7 @@ const PRODUCTS = [
     description:
       "Start your morning with the sausage wisdom it deserves. 11oz ceramic, dishwasher safe.",
     price: "$18",
-    emoji: "☕",
+    label: "MUG",
     sayingId: "wurst-zwei-enden",
     tag: "Best Seller",
     tagColor: "bg-accent text-primary",
@@ -21,7 +21,7 @@ const PRODUCTS = [
     description:
       "Wear your confusion proudly. 100% organic cotton. Available in forest green and cream.",
     price: "$28",
-    emoji: "👕",
+    label: "TEE",
     sayingId: "tomaten-augen",
     tag: "New",
     tagColor: "bg-german-red text-cream",
@@ -32,7 +32,7 @@ const PRODUCTS = [
     description:
       "German art direction, literally. Archival print, solid wood frame. Perfect for offices and dining rooms.",
     price: "$45",
-    emoji: "🖼️",
+    label: "PRINT",
     sayingId: "um-die-wurst",
     tag: "Coming Soon",
     tagColor: "bg-cream/20 text-cream",
@@ -80,8 +80,8 @@ export default function MerchClient() {
                         {product.tag}
                       </span>
                     )}
-                    <div className="text-6xl mb-4 drop-shadow-lg">
-                      {product.emoji}
+                    <div className="text-cream/20 font-display text-5xl font-bold tracking-widest mb-4 select-none">
+                      {product.label}
                     </div>
                     {saying && (
                       <div className="text-center px-2">
@@ -138,19 +138,19 @@ export default function MerchClient() {
           </p>
           <div className="grid grid-cols-3 gap-8 max-w-sm mx-auto">
             <div className="text-center">
-              <div className="text-4xl mb-3">🇩🇪</div>
+              <p className="font-display text-2xl font-bold text-cream mb-2">DE</p>
               <p className="text-xs text-cream/60 font-medium uppercase tracking-wide">
                 German-inspired
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-3">♻️</div>
+              <p className="font-display text-2xl font-bold text-cream mb-2">ECO</p>
               <p className="text-xs text-cream/60 font-medium uppercase tracking-wide">
                 Sustainably made
               </p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-3">🚚</div>
+              <p className="font-display text-2xl font-bold text-cream mb-2">INT'L</p>
               <p className="text-xs text-cream/60 font-medium uppercase tracking-wide">
                 Ships worldwide
               </p>

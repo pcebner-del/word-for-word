@@ -54,7 +54,7 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
       </div>
       {filtered.length === 0 ? (
         <div className="text-center py-20 text-gray-400">
-          <div className="text-6xl mb-4">🌭</div>
+          <div className="font-display text-5xl font-bold text-gray-200 mb-4">—</div>
           <p className="text-lg font-medium mb-2">No sayings found</p>
           <p className="text-sm">Try a different keyword or clear the filters.</p>
           <button

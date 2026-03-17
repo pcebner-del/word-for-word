@@ -22,7 +22,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <p className="text-xs uppercase tracking-widest text-primary/50 font-medium mb-4">
-              Deutsch → English → 😂
+              Deutsch → English → Chaos
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-primary leading-tight mb-6">
               German. Translated.
@@ -65,7 +65,7 @@ export default function Home() {
               href="/merch"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-cream transition-colors"
             >
-              Shop Merch 🛍️
+              Shop Merch
             </Link>
           </div>
         </div>
@@ -78,18 +78,18 @@ export default function Home() {
             &ldquo;The sausage always has two ends — and the Germans have a
             saying for that.&rdquo;
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🇩🇪</span>
-              <span>{sayings.length} authentic sayings</span>
+          <div className="mt-10 flex flex-wrap justify-center gap-10 text-sm text-gray-500">
+            <div className="text-center">
+              <p className="font-display text-3xl font-bold text-primary">{sayings.length}</p>
+              <p className="uppercase tracking-widest text-xs mt-1">Authentic Sayings</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🌭</span>
-              <span>Featuring actual sausage metaphors</span>
+            <div className="text-center">
+              <p className="font-display text-3xl font-bold text-primary">100%</p>
+              <p className="uppercase tracking-widest text-xs mt-1">Literally Translated</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">😂</span>
-              <span>100% literally translated</span>
+            <div className="text-center">
+              <p className="font-display text-3xl font-bold text-primary">∞</p>
+              <p className="uppercase tracking-widest text-xs mt-1">Sausage Metaphors</p>
             </div>
           </div>
         </div>
