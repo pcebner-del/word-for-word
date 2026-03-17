@@ -15,6 +15,7 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
   const handleCategoryChange = (cat: Category | null) => {
+    setSearch("");
     setSelectedCategory(cat);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
