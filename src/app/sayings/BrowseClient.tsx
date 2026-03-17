@@ -20,17 +20,19 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
   };
 
   const filtered = useMemo(() => {
+    const q = search.toLowerCase().trim();
     return sayings.filter((s) => {
-      const matchesCategory =
-        selectedCategory === null || s.category === selectedCategory;
-      const q = search.toLowerCase().trim();
-      const matchesSearch =
-        !q ||
-        s.german.toLowerCase().includes(q) ||
-        s.wordForWord.toLowerCase().includes(q) ||
-        s.meaning.toLowerCase().includes(q) ||
-        s.tags.some((t) => t.toLowerCase() === q);
-      return matchesCategory && matchesSearch;
+      // If searching, ignore category filter — search everything
+      if (q) {
+        return (
+          s.german.toLowerCase().includes(q) ||
+          s.wordForWord.toLowerCase().includes(q) ||
+          s.meaning.toLowerCase().includes(q) ||
+          s.tags.some((t) => t.toLowerCase() === q)
+        );
+      }
+      // No search — apply category filter
+      return selectedCategory === null || s.category === selectedCategory;
     });
   }, [sayings, search, selectedCategory]);
 
