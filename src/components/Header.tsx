@@ -21,7 +21,7 @@ export default function Header() {
             <div className="w-6 h-[5px] bg-german-red rounded-sm" />
             <div className="w-6 h-[5px] bg-german-gold rounded-sm" />
           </div>
-          <span className="font-display text-xl font-bold tracking-tight text-cream group-hover:text-accent transition-colors">
+          <span className="font-display text-lg md:text-xl font-bold tracking-tight text-cream group-hover:text-accent transition-colors whitespace-nowrap">
             WORD FOR WORD
           </span>
         </Link>
