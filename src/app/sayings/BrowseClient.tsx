@@ -12,9 +12,12 @@ interface BrowseClientProps {
 
 export default function BrowseClient({ sayings }: BrowseClientProps) {
   const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
-    null
-  );
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
+
+  const handleCategoryChange = (cat: Category | null) => {
+    setSelectedCategory(cat);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const filtered = useMemo(() => {
     return sayings.filter((s) => {
@@ -26,8 +29,7 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
         s.german.toLowerCase().includes(q) ||
         s.wordForWord.toLowerCase().includes(q) ||
         s.meaning.toLowerCase().includes(q) ||
-        s.tags.some((t) => t.toLowerCase().includes(q)) ||
-        s.category.toLowerCase().includes(q);
+        s.tags.some((t) => t.toLowerCase() === q);
       return matchesCategory && matchesSearch;
     });
   }, [sayings, search, selectedCategory]);
@@ -40,7 +42,7 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
       <div className="mb-8">
         <CategoryFilter
           selected={selectedCategory}
-          onChange={setSelectedCategory}
+          onChange={handleCategoryChange}
         />
       </div>
       <div className="mb-6 text-sm text-gray-400">

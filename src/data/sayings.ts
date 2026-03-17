@@ -981,14 +981,6 @@ export const sayings: Saying[] = [
     tags: ['grass', 'greener', 'other side', 'envy', 'comparison'],
   },
   {
-    id: 'käse-brot',
-    german: 'Der Apfel fällt nicht weit vom Stamm.',
-    wordForWord: 'One hand washes the other.',
-    meaning: 'Mutual help and cooperation benefit everyone.',
-    category: 'Life',
-    tags: ['hand', 'wash', 'mutual', 'cooperation', 'help'],
-  },
-  {
     id: 'eine-hand-wäscht',
     german: 'Eine Hand wäscht die andere.',
     wordForWord: 'One hand washes the other.',
@@ -1108,14 +1100,7 @@ export const sayings: Saying[] = [
     category: 'Work',
     tags: ['rest', 'rust', 'active', 'lazy', 'keep going'],
   },
-  {
-    id: 'kein-meister',
-    german: 'Es ist noch kein Meister vom Himmel gefallen.',
-    wordForWord: 'No master has yet fallen from heaven.',
-    meaning: 'Nobody is born an expert. Everyone has to learn.',
-    category: 'Work',
-    tags: ['master', 'heaven', 'expert', 'learning', 'born'],
-  },
+
   {
     id: 'gut-ding-weile',
     german: 'Gut Ding will Weile haben.',
@@ -1132,14 +1117,7 @@ export const sayings: Saying[] = [
     category: 'Life',
     tags: ['hands', 'favor', 'plays', 'advantage', 'lucky'],
   },
-  {
-    id: 'alles-hat-ende',
-    german: 'Alles hat ein Ende, nur die Wurst hat zwei.',
-    wordForWord: 'Everything has an end, only the sausage has two.',
-    meaning: 'All good things must come to an end.',
-    category: 'Food & Sausage',
-    tags: ['end', 'sausage', 'wurst', 'endings', 'two ends'],
-  },
+
   {
     id: 'wer-zuerst',
     german: 'Wer zuerst kommt, mahlt zuerst.',
@@ -1294,7 +1272,7 @@ export const sayings: Saying[] = [
     tags: ['cat', 'mice', 'dance', 'boss', 'away'],
   },
   {
-    id: 'hund-knochen',
+    id: 'schlafende-hunde',
     german: 'Schlafende Hunde soll man nicht wecken.',
     wordForWord: 'Sleeping dogs should not be woken.',
     meaning: 'Let sleeping dogs lie.',
@@ -1421,14 +1399,7 @@ export const sayings: Saying[] = [
     category: 'Weather',
     tags: ['rain', 'just', 'unjust', 'fair', 'life'],
   },
-  {
-    id: 'netz-fischen',
-    german: 'Wer anderen eine Grube gräbt, fällt selbst hinein.',
-    wordForWord: 'He who digs a pit for others falls in himself.',
-    meaning: 'Traps set for others have a way of catching the setter.',
-    category: 'Life',
-    tags: ['trap', 'others', 'backfire', 'karma', 'falls in'],
-  },
+
   {
     id: 'silber-zunge',
     german: 'Honigmund, Giftzahn.',
