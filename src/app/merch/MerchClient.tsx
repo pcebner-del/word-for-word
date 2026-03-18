@@ -5,11 +5,33 @@ import { useState } from "react";
 export default function MerchClient() {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
+    if (!email.trim()) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -44,22 +66,29 @@ export default function MerchClient() {
             <span className="text-sm font-medium">You&apos;re on the list.</span>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              required
-              className="flex-1 px-5 py-3 rounded-full border-2 border-cream-dark bg-white text-primary placeholder-gray-400 focus:outline-none focus:border-accent text-sm transition-colors"
-            />
-            <button
-              type="submit"
-              className="px-7 py-3 bg-primary text-cream rounded-full text-sm font-medium hover:bg-primary-light transition-colors whitespace-nowrap cursor-pointer"
-            >
-              Notify Me
-            </button>
-          </form>
+          <>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
+                disabled={loading}
+                className="flex-1 px-5 py-3 rounded-full border-2 border-cream-dark bg-white text-primary placeholder-gray-400 focus:outline-none focus:border-accent text-sm transition-colors disabled:opacity-60"
+              />
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-7 py-3 bg-primary text-cream rounded-full text-sm font-medium hover:bg-primary-light transition-colors whitespace-nowrap cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {loading ? "Saving…" : "Notify Me"}
+              </button>
+            </form>
+            {error && (
+              <p className="mt-4 text-sm text-red-500">{error}</p>
+            )}
+          </>
         )}
 
         {/* Bottom accent */}
