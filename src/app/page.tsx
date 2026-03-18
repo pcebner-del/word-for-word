@@ -88,8 +88,8 @@ export default function Home() {
               <p className="uppercase tracking-widest text-xs mt-1">Literally Translated</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl mb-1">🌭</p>
-              <p className="uppercase tracking-widest text-xs mt-1">Sausage Metaphors</p>
+              <p className="text-4xl leading-none mb-1">🌭</p>
+              <p className="uppercase tracking-widest text-xs mt-1 text-gray-500">Sausage Metaphors</p>
             </div>
           </div>
         </div>
