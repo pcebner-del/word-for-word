@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import type { Saying, Category } from "@/data/sayings";
 import SayingCard from "@/components/SayingCard";
 import SearchBar from "@/components/SearchBar";
@@ -19,6 +19,10 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
     setSelectedCategory(cat);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim();
@@ -73,11 +77,26 @@ export default function BrowseClient({ sayings }: BrowseClientProps) {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((saying) => (
-            <SayingCard key={saying.id} saying={saying} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map((saying) => (
+              <SayingCard key={saying.id} saying={saying} />
+            ))}
+          </div>
+          {filtered.length > 6 && (
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={scrollToTop}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-cream rounded-full text-sm font-medium hover:bg-primary-light transition-colors cursor-pointer"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                </svg>
+                Back to Top
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

@@ -21,7 +21,7 @@ export default function MerchClient() {
         <div className="flex items-center gap-4 mb-12">
           <div className="flex-1 h-px bg-primary/20" />
           <span className="text-xs uppercase tracking-[0.3em] text-primary/40 font-medium">
-            Bald verfügbar
+            Gut Ding will Weile haben
           </span>
           <div className="flex-1 h-px bg-primary/20" />
         </div>

@@ -22,7 +22,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <p className="text-xs uppercase tracking-widest text-primary/50 font-medium mb-4">
-              Deutsch → English → Chaos
+              Deutsch → English → Was?!
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-primary leading-tight mb-6">
               German. Translated.
@@ -75,7 +75,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-cream">
         <div className="max-w-3xl mx-auto text-center">
           <p className="font-display text-3xl md:text-4xl text-primary/60 italic leading-relaxed">
-            &ldquo;The sausage always has two ends — and the Germans have a
+            &ldquo;The sausage has two ends — and the Germans have a
             saying for that.&rdquo;
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-10 text-sm text-gray-500">
@@ -88,6 +88,7 @@ export default function Home() {
               <p className="uppercase tracking-widest text-xs mt-1">Literally Translated</p>
             </div>
             <div className="text-center">
+              <p className="text-3xl mb-0.5">🌭</p>
               <p className="font-display text-3xl font-bold text-primary">∞</p>
               <p className="uppercase tracking-widest text-xs mt-1">Sausage Metaphors</p>
             </div>
