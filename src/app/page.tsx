@@ -78,7 +78,7 @@ export default function Home() {
             &ldquo;The sausage has two ends — and the Germans have a
             saying for that.&rdquo;
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-10 text-sm text-gray-500">
+          <div className="mt-10 flex flex-wrap justify-center items-end gap-10 text-sm text-gray-500">
             <div className="text-center">
               <p className="font-display text-3xl font-bold text-primary">{sayings.length}</p>
               <p className="uppercase tracking-widest text-xs mt-1">Authentic Sayings</p>
@@ -88,8 +88,8 @@ export default function Home() {
               <p className="uppercase tracking-widest text-xs mt-1">Literally Translated</p>
             </div>
             <div className="text-center">
-              <p className="text-4xl leading-none mb-1">🌭</p>
-              <p className="uppercase tracking-widest text-xs mt-1 text-gray-500">Sausage Metaphors</p>
+              <p className="font-display text-3xl font-bold text-primary">🌭</p>
+              <p className="uppercase tracking-widest text-xs mt-1">Sausage Metaphors</p>
             </div>
           </div>
         </div>
