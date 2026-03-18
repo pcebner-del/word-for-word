@@ -17,7 +17,10 @@
   --font-sans: var(--font-inter);
 }
 
+html,
 body {
+  overflow-x: hidden;
+  max-width: 100%;
   background-color: #faf7f0;
   color: #1a1a1a;
 }

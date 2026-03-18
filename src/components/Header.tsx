@@ -25,12 +25,12 @@ export default function Header() {
             WORD FOR WORD
           </span>
         </Link>
-        <nav className="flex items-center gap-1">
+        <nav className="flex items-center gap-0.5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-2 sm:px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 pathname === link.href
                   ? "bg-cream/15 text-cream"
                   : "text-cream/70 hover:text-cream hover:bg-cream/10"
