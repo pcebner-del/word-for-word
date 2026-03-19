@@ -14,7 +14,7 @@ export default function MerchPage() {
       <section className="bg-primary text-cream py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-accent text-xs uppercase tracking-widest font-medium mb-4">
-            Deutsche Qualität
+            Gut Ding will Weile haben
           </p>
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6">
             Wear Your
