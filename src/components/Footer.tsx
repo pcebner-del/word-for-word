@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
               <div className="flex flex-col gap-[3px]">
-                <div className="w-4 h-[3px] bg-german-black rounded-sm" />
+                <div className="w-4 h-[3px] bg-[#4a4a4a] rounded-sm" />
                 <div className="w-4 h-[3px] bg-german-red rounded-sm" />
                 <div className="w-4 h-[3px] bg-german-gold rounded-sm" />
               </div>
