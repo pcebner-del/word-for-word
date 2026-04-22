@@ -13,11 +13,11 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-primary text-cream sticky top-0 z-50 shadow-md">
+    <header className="bg-black text-cream sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="flex flex-col gap-[3px]">
-            <div className="w-6 h-[5px] bg-[#4a4a4a]" />
+            <div className="w-6 h-[5px] bg-[#333333]" />
             <div className="w-6 h-[5px] bg-german-red" />
             <div className="w-6 h-[5px] bg-german-gold" />
           </div>
