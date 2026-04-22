@@ -16,10 +16,10 @@ export default function Header() {
     <header className="bg-primary text-cream sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex flex-row gap-[3px]">
-            <div className="w-[5px] h-6 bg-[#555555] rounded-sm" />
-            <div className="w-[5px] h-6 bg-german-red rounded-sm" />
-            <div className="w-[5px] h-6 bg-german-gold rounded-sm" />
+          <div className="flex flex-col gap-[3px]">
+            <div className="w-6 h-[5px] bg-[#4a4a4a] rounded-sm" />
+            <div className="w-6 h-[5px] bg-german-red rounded-sm" />
+            <div className="w-6 h-[5px] bg-german-gold rounded-sm" />
           </div>
           <span className="font-display text-lg md:text-xl font-bold tracking-tight text-cream group-hover:text-accent transition-colors whitespace-nowrap">
             WORD FOR WORD
