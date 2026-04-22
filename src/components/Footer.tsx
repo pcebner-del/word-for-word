@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-cream/70 py-12 mt-16">
+    <footer className="bg-black text-cream/70 py-12 mt-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
               <div className="flex flex-col gap-[3px]">
-                <div className="w-4 h-[3px] bg-[#4a4a4a]" />
+                <div className="w-4 h-[3px] bg-[#333333]" />
                 <div className="w-4 h-[3px] bg-german-red" />
                 <div className="w-4 h-[3px] bg-german-gold" />
               </div>
