@@ -12,7 +12,7 @@ export default function ShareButton({ saying, className }: ShareButtonProps) {
   const [copied, setCopied] = useState(false);
 
   const handleShare = async () => {
-    const text = `"${saying.german}"\n\nLiterally: "${saying.wordForWord}"\n\nActually means: ${saying.meaning}\n\n— Word For Word`;
+    const text = `"${saying.german}"\n\nLiterally: "${saying.wordForWord}"\n\nActually means: ${saying.meaning}\n\n— Wörd For Word`;
 
     try {
       await navigator.clipboard.writeText(text);

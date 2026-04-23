@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MerchClient from "./MerchClient";
 
 export const metadata: Metadata = {
-  title: "Merch — Word For Word",
+  title: "Merch — Wörd For Word",
   description:
     "Premium merchandise featuring your favorite literally-translated German sayings.",
 };

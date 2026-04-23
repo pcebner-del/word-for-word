@@ -42,7 +42,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-8 pt-6 border-t border-cream/10 text-center text-xs text-cream/30">
-          © {new Date().getFullYear()} Word For Word. German humor, delivered
+          © {new Date().getFullYear()} Wörd For Word. German humor, delivered
           literally.
         </div>
       </div>

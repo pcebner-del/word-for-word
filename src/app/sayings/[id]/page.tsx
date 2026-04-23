@@ -23,7 +23,7 @@ export async function generateMetadata({
   const saying = getSayingById(id);
   if (!saying) return {};
   return {
-    title: `"${saying.german}" — Word For Word`,
+    title: `"${saying.german}" — Wörd For Word`,
     description: `Literally: "${saying.wordForWord}"`,
   };
 }

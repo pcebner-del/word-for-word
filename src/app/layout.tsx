@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Word For Word — German Sayings, Literally",
+  title: "Wörd For Word — German Sayings, Literally",
   description:
     "German idioms translated word for word into English. The results are delightfully unhinged.",
 };

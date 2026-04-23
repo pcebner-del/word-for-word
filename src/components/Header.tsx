@@ -22,7 +22,7 @@ export default function Header() {
             <div className="w-6 h-[5px] bg-german-gold" />
           </div>
           <span className="font-display text-lg md:text-xl font-bold tracking-tight text-cream group-hover:text-accent transition-colors whitespace-nowrap">
-            WORD FOR WORD
+            WÖRD FOR WORD
           </span>
         </Link>
         <nav className="flex items-center gap-0.5">

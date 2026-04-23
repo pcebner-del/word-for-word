@@ -1,108 +1,100 @@
 "use client";
 
-import { useState } from "react";
+// TODO: Replace STORE_URL with the actual Gelato store URL once live
+const STORE_URL = "https://www.etsy.com/shop/WordForWordShop";
+
+const products = [
+  { saying: "Das ist nicht mein Bier", literal: "That's not my beer.", item: "Mug" },
+  { saying: "Das ist mir Wurst", literal: "That is sausage to me.", item: "Tee" },
+  { saying: "Alles in Butter", literal: "Everything in butter.", item: "Mug" },
+  { saying: "Ich glaub', mein Schwein pfeift", literal: "I think my pig is whistling.", item: "Tee" },
+  { saying: "Da steppt der Bär", literal: "The bear is doing the step dance.", item: "Tee + Beanie" },
+  { saying: "Da haben wir den Salat", literal: "There we have the salad.", item: "Mug" },
+  { saying: "Hals- und Beinbruch!", literal: "Neck and leg break!", item: "Print" },
+  { saying: "Wo gehobelt wird, da fallen Späne", literal: "Where there is planing, there are shavings.", item: "Framed Print" },
+];
 
 export default function MerchClient() {
-  const [submitted, setSubmitted] = useState(false);
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim() }),
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        const data = await res.json().catch(() => ({}));
-        setError(data.error || "Something went wrong. Please try again.");
-      }
-    } catch {
-      setError("Network error. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  const isLive = Boolean(STORE_URL);
 
   return (
-    <section className="min-h-[60vh] flex items-center justify-center px-4 py-24">
-      <div className="max-w-lg mx-auto text-center">
-
-        {/* Divider line */}
-        <div className="flex items-center gap-4 mb-12">
-          <div className="flex-1 h-px bg-primary/20" />
-          <span className="text-xs uppercase tracking-[0.3em] text-primary/40 font-medium">
-            Gut Ding will Weile haben
-          </span>
-          <div className="flex-1 h-px bg-primary/20" />
+    <>
+      {/* Product preview grid */}
+      <section className="max-w-5xl mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <p className="text-xs uppercase tracking-widest text-primary/40 font-medium mb-3">
+            The Collection
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary">
+            8 sayings. Mugs, tees, prints & more.
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-md mx-auto text-sm leading-relaxed">
+            Printed locally in the US, Germany, and 30+ countries. Fast shipping. Real quality.
+          </p>
         </div>
 
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
-          Something worth<br />
-          <span className="italic text-accent">wearing</span> is coming.
-        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          {products.map((p) => (
+            <div
+              key={p.saying}
+              className="bg-white border border-primary/10 rounded-2xl p-5 flex flex-col gap-2 hover:border-accent/40 transition-colors"
+            >
+              <span className="text-[10px] uppercase tracking-widest text-accent font-medium">
+                {p.item}
+              </span>
+              <p className="font-display font-bold text-primary text-sm leading-snug">
+                {p.saying}
+              </p>
+              <p className="text-gray-400 text-xs italic leading-relaxed">
+                &ldquo;{p.literal}&rdquo;
+              </p>
+            </div>
+          ))}
+        </div>
 
-        <p className="text-gray-500 text-base leading-relaxed mb-12 max-w-sm mx-auto">
-          Mugs, tees, and prints. German precision. Literally translated.
-          Be the first to know when we launch.
-        </p>
+        {/* CTA */}
+        <div className="text-center">
+          {isLive ? (
+            <a
+              href={STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-4 bg-primary text-cream rounded-full text-sm font-medium hover:bg-primary-light transition-colors"
+            >
+              Shop the Collection →
+            </a>
+          ) : (
+            <ComingSoonCapture />
+          )}
+        </div>
+      </section>
 
-        {submitted ? (
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-cream rounded-full">
-            <svg className="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-sm font-medium">You&apos;re on the list.</span>
+      {/* Flags / shipping callout */}
+      <section className="bg-primary/5 border-t border-primary/10 py-10 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-primary/40 font-medium mb-4">
+            Ships from your corner of the world
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-primary/60">
+            <span>🇺🇸 Printed in the US</span>
+            <span>🇩🇪 Printed in Germany</span>
+            <span>🌍 30+ countries</span>
           </div>
-        ) : (
-          <>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                disabled={loading}
-                className="flex-1 px-5 py-3 rounded-full border-2 border-cream-dark bg-white text-primary placeholder-gray-400 focus:outline-none focus:border-accent text-sm transition-colors disabled:opacity-60"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-7 py-3 bg-primary text-cream rounded-full text-sm font-medium hover:bg-primary-light transition-colors whitespace-nowrap cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {loading ? "Saving…" : "Notify Me"}
-              </button>
-            </form>
-            {error && (
-              <p className="mt-4 text-sm text-red-500">{error}</p>
-            )}
-          </>
-        )}
-
-        {/* Bottom accent */}
-        <div className="mt-16 flex flex-wrap justify-center gap-10 text-xs uppercase tracking-widest text-primary/30 font-medium">
-          <span>Mugs</span>
-          <span>·</span>
-          <span>Tees</span>
-          <span>·</span>
-          <span>Prints</span>
-          <span>·</span>
-          <span>More</span>
         </div>
+      </section>
+    </>
+  );
+}
 
+function ComingSoonCapture() {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <div className="inline-flex items-center gap-3 px-8 py-4 bg-primary/5 border border-primary/20 text-primary rounded-full">
+        <span className="text-sm font-medium">Launching very soon — check back shortly</span>
       </div>
-    </section>
+      <p className="text-xs text-gray-400">
+        Gut Ding will Weile haben. Good things want to take their time.
+      </p>
+    </div>
   );
 }

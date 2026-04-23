@@ -3,7 +3,7 @@ import { sayings } from "@/data/sayings";
 import BrowseClient from "./BrowseClient";
 
 export const metadata: Metadata = {
-  title: "All Sayings — Word For Word",
+  title: "All Sayings — Wörd For Word",
   description: "Browse all German sayings translated word for word into English.",
 };
 
